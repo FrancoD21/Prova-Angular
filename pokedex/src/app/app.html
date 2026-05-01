@@ -1,0 +1,27 @@
+<div class="container py-5">
+  <h1 class="text-center mb-5 text-white fw-bold">Pokédex</h1>
+
+  <div class="row g-4">
+    <!-- Griglia dei Pokémon -->
+    @for (p of myPokemons; track p.id) {
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card pokemon-card h-100 p-2 text-center" (click)="selectPokemon(p)">
+          <img [src]="p.imageURL" class="img-small" alt="{{ p.name }}">
+          <div class="card-body p-1">
+            <h6 class="text-white mb-2">{{ p.name }}</h6>
+            <span class="badge rounded-pill bg-dark border border-secondary text-info">
+              {{ p.type }}
+            </span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Dettaglio (Sfida Pro) sotto la lista -->
+  @if (selectedPokemon) {
+    <div class="mt-5 pt-4 border-top border-secondary">
+      <app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
+    </div>
+  }
+</div>

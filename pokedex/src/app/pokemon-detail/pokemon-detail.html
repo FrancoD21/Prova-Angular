@@ -1,0 +1,37 @@
+<div class="card bg-dark text-white border-0 shadow-lg overflow-hidden" style="border-radius: 25px;">
+  <div class="row g-0">
+    <!-- Parte Sinistra: Immagine Grande -->
+    <div class="col-md-5 bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center p-4">
+      <img [src]="pokemon.imageURL" class="img-fluid animate__animated animate__zoomIn" 
+           style="max-height: 300px; filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));">
+    </div>
+
+    <!-- Parte Destra: Dati[cite: 1] -->
+    <div class="col-md-7 p-4">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <div>
+          <h1 class="display-5 fw-bold text-info mb-0">{{ pokemon.name }}</h1>
+          <span class="text-muted">Pokedex ID #{{ pokemon.id }}</span>
+        </div>
+        <span class="badge bg-info text-dark fs-5">{{ pokemon.type }}</span>
+      </div>
+
+      <!-- Barra HP[cite: 1] -->
+      <div class="mb-4">
+        <div class="d-flex justify-content-between mb-1">
+          <span>Punti Vita (HP)</span>
+          <span class="text-danger fw-bold">{{ pokemon.hp }} / 150</span>
+        </div>
+        <div class="progress bg-secondary" style="height: 12px; border-radius: 6px;">
+          <div class="progress-bar bg-danger shadow-sm progress-bar-striped progress-bar-animated" 
+               [style.width.%]="(pokemon.hp / 150) * 100"></div>
+        </div>
+      </div>
+
+      <h5 class="text-info">Descrizione</h5>
+      <p class="lead text-secondary" style="font-style: italic;">
+        "{{ pokemon.description }}"
+      </p>
+    </div>
+  </div>
+</div>

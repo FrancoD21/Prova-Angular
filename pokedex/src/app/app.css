@@ -1,0 +1,36 @@
+/* Sfondo scuro per tutta l'app */
+:host {
+    display: block;
+    background-color: #121212;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+/* Card della Lista */
+.pokemon-card {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    border-radius: 15px !important;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    border-color: #0d6efd !important;
+    background-color: #252525 !important;
+}
+
+/* Immagine rimpicciolita nella lista */
+.img-small {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 10px auto;
+}
+
+/* Badge semplificati */
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
